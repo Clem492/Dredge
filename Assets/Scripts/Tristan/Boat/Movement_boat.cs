@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class Movement_boat : MonoBehaviour
 {
+    // float qui determine la vitesse de deplacement et de rotation 
     float speed = 5f;
     float speed_rotation = 25f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+ 
     void Update()
     {
+        //appelle de la fonction deplacement
         Move();
     }
 
+    
+    //fonction deplacement
     void Move()
     {
+        // avancer / reculer
         float move = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         transform.Translate(Vector3.forward * move);
 
